@@ -1,0 +1,150 @@
+<!--
+comments
+HeaderBarColor:#0071dc
+background-color#e6f1fc
+-->
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title>Rust Discount Department Store</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href ="Icons_Font-6/css/all.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class ="navbar__container"> 
+  <a href="/index.html" id = "navbar__logo">MyItems<img src = "images/BearCat_logo.images.png"></a>
+    <div class = "navbar__toggle" id = "mobile-menu">
+          <span class ="bar"></span><span class ="bar"></span>
+          <span class ="bar"></span>
+        </div>
+    <ul class = "navbar__menu">
+      <li class = "navbar__item">
+      <a href = "/Departments.html" class = "navbar__links">Departments</a>
+    </li>
+    <li class = "navbar__item">
+      <a href = "/Services.html" class = "navbar__links">Services</a>
+    </li>
+    <li class = "navbar__item">
+      <a href = "/index.html" class = "navbar__links">Home</a>
+    </li>
+    <li class = "navbar__btn">
+      <a href = "/Account.html" class = "button">Account</a>	
+    </li>
+    </ul>
+  </div>
+</nav>
+
+<!---------MY Items Home---------->
+<div class = "MyItems__Home">
+  <!---------Header---------->
+  <h1 class = "MyItems__Header">
+    <h2 class = "MyItems__title">
+      <i class="fa-solid fa-paw fa-bounce" style="color: #7f77f9;"></i>
+    Cart Items
+    <h2>
+      <p class = "warning">*All items are purchasable in store only</p>
+
+  </h1>
+<!----------Home------------->
+<h1></h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Product Image</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+      </tbody>
+    </table>
+    <table>
+      <tfoot>
+        <tr>
+        <th>Total</th>
+        <td class="navbar__cart-total" id = "total">$0.00</td>
+        </tr>
+      </tfoot>
+    </table>
+</div>
+
+
+<!----------footer------------>
+  <footer class = "homeFooter">
+    <img src = "/images/IMG_0809.PNG" id = "footer__image">
+    <h1>
+    <p class = "fa-solid fa-phone" style = "color:darkgray;">  662-252-8000</p>
+    </h1>
+    <h2>
+    <p class = "fa-solid fa-location-pin" style = "color:darkgray;">  150 Rust Ave, Holly Springs, Ms 38635</p>
+    </h2>
+    <h3>
+    <p class = "fa-solid fa-envelope" style = "color:darkgray;">  admissions@rustcollege.edu</p>
+    </h3>
+    <p class = "footerText">Beta</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Retrieve the cart items from local storage
+    let cartItems = JSON.parse(localStorage.getItem("shoppingCart"));
+
+    // Check if cartItems is not null or empty
+    if (cartItems && cartItems.length > 0) {
+        // Get the table body
+        let cartTable = document.getElementById("cart-items");
+
+        // Loop through each item in the cartItems array
+        for (let i = 0; i < cartItems.length; i++) {
+            // Create a new table row
+            let row = document.createElement("tr");
+
+            // Create a table cell for the product name
+            let nameCell = document.createElement("td");
+            nameCell.innerText = cartItems[i].name;
+
+            // Create a table cell for the product name
+            let imageCell = document.createElement("td");
+            let image = document.createElement("img");
+            image.src = cartItems[i].image;
+            imageCell.appendChild(image);
+
+            // Create a table cell for the price
+            let priceCell = document.createElement("td");
+            priceCell.innerText = "$" + cartItems[i].price.toFixed(2);
+
+            // Add the cells to the row
+            row.appendChild(nameCell);
+            row.appendChild(imageCell);
+            row.appendChild(priceCell);
+
+            // Add the row to the table
+            cartTable.appendChild(row);
+        }
+    }
+
+    function updateCartDisplay() {
+  // Retrieve the cart items from local storage
+  let cartItems = JSON.parse(localStorage.getItem("shoppingCart"));
+
+  // Calculate the total value
+  let total = 0;
+  for (let i = 0; i < cartItems.length; i++) {
+    total += cartItems[i].price;
+  }
+
+  // Update the HTML element that displays the total
+  document.getElementById("total").innerText = "$" + total.toFixed(2);
+}
+
+// Call the updateCartDisplay function to display the current total
+updateCartDisplay();
+
+</script>
+</body>
+</html>

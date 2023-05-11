@@ -1,0 +1,164 @@
+<!--
+comments
+HeaderBarColor:#0071dc
+background-color#e6f1fc
+-->
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title>Rust Discount Department Store</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href ="Icons_Font-6/css/all.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class ="navbar__container"> 
+  <a href="/index.html" id = "navbar__logo">Departments<img src = "images/BearCat_logo.images.png"></a>
+    <div class = "navbar__toggle" id = "mobile-menu">
+          <span class ="bar"></span><span class ="bar"></span>
+          <span class ="bar"></span>
+        </div>
+    <ul class = "navbar__menu">
+      <li class = "navbar__item">
+      <a href = "/MyItems.html" class = "navbar__links">MyItems</a>
+    </li>
+    <li class = "navbar__item">
+      <a href = "/Services.html" class = "navbar__links">Services</a>
+    </li>
+    <li class = "navbar__item">
+      <a href = "/index.html" class = "navbar__links">Home</a>
+    </li>
+    <li class = "navbar__btn">
+      <a href = "/Account.html" class = "button">Account</a>	
+    </li>
+    </ul>
+  </div>
+</nav>
+
+<!--------------Department__Home--------------->
+<section class = "Department__Home">
+  <header>
+		<nav>
+			<ul>
+				<li class="navbar__cart">
+					<a href="#" class = "cart__numbers">
+						<span class="navbar__cart-items">0</span>
+						<i class = "fa-solid fa-shopping-cart" ></i>
+						<span class="navbar__cart-total">$0.00</span>
+					</a>
+          <button class = "fa-solid fa-trash-can" data-index="0"></button>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main class = "product__list">
+		<div class="product__box">
+      <img src = "images/IMG_0814.JPG" class = "product__image">
+			<h2 class="product__name">Hats</h2>
+			<p class="product__price">$15.00</p>
+			<button class="add-cart">Add to cart</button>
+		</div>
+		<!-- Add more product boxes here -->
+    <div class="product__box">
+      <img src = "images/IMG_0821.JPG" class = "product__image">
+			<h2 class="product__name">Hoodies</h2>
+			<p class="product__price">$35.00</p>
+			<button class="add-cart">Add to cart</button>
+			
+		</div>
+    <div class="product__box">
+      <img src = "images/IMG_0817.JPG" class = "product__image">
+			<h2 class="product__name">Jackets</h2>
+			<p class="product__price">$59.95</p>
+			<button class="add-cart">Add to cart</button>
+		</div>
+    <div class="product__box">
+      <img src = "images/IMG_0815.JPG" class = "product__image">
+			<h2 class="product__name">Long Sleeve T-Shirts</h2>
+			<p class="product__price">$25.00</p>
+			<button class="add-cart">Add to cart</button>
+		</div>
+    <div class="product__box">
+      <img src = "images/IMG_0816.JPG" class = "product__image">
+			<h2 class="product__name">Polos</h2>
+			<p class="product__price">$30.00</p>
+			<button class="add-cart">Add to cart</button>
+		</div>
+    <div class="product__box">
+      <img src = "images/IMG_0819.JPG" class = "product__image">
+			<h2 class="product__name">Slides</h2>
+			<p class="product__price">$15.00</p>
+			<button class="add-cart">Add to cart</button>
+		</div>
+    <div class="product__box">
+      <img src = "images/IMG_0818.JPG" class = "product__image">
+			<h2 class="product__name">Sweat Pants</h2>
+			<p class="product__price">$29.65</p>
+			<button class="add-cart">Add to cart</button>
+		</div>
+    <div class="product__box">
+      <img src = "images/IMG_0813.JPG" class = "product__image">
+			<h2 class="product__name">T-Shirts</h2>
+			<p class="product__price">$19.25</p>
+			<button class="add-cart">Add to cart</button>
+		</div>
+    <div class="product__box">
+      <img src = "images/BearCat_logo.images.png" class = "product__image">
+			<h2 class="product__name">Toddler</h2>
+			<p class="product__price">$14.00</p>
+			<button class="add-cart">Add to cart</button>
+		</div>
+    <div class="product__box">
+      <img src = "images/IMG_0823.JPG" class = "product__image">
+			<h2 class="product__name">Camping Mugs</h2>
+			<p class="product__price">$14.35</p>
+			<button class="add-cart">Add to cart</button>
+		</div>
+    <div class="product__box">
+      <img src = "images/IMG_0823.JPG" class = "product__image">
+			<h2 class="product__name">Ceramic Mug</h2>
+			<p class="product__price">$7.39</p>
+			<button class="add-cart">Add to cart</button>
+		</div>
+    <div class="product__box">
+      <img src = "images/IMG_0823.JPG" class = "product__image">
+			<h2 class="product__name">Tumbler</h2>
+			<p class="product__price">$17.65</p>
+			<button class="add-cart">Add to cart</button>
+		</div>
+    <div class="product__box">
+      <img src = "images/IMG_0823.JPG" class = "product__image">
+			<h2 class="product__name">White Bottle</h2>
+			<p class="product__price">$26.45</p>
+			<button class="add-cart">Add to cart</button>
+		</div>
+
+	</main>
+
+</section>
+
+
+
+<!-------------------Footer--------------------->
+  <footer class = "homeFooter">
+    <img src = "/images/IMG_0809.PNG" id = "footer__image">
+    <h1>
+    <p class = "fa-solid fa-phone" style = "color:darkgray;">  662-252-8000</p>
+    </h1>
+    <h2>
+    <p class = "fa-solid fa-location-pin" style = "color:darkgray;">  150 Rust Ave, Holly Springs, Ms 38635</p>
+    </h2>
+    <h3>
+    <p class = "fa-solid fa-envelope" style = "color:darkgray;">  admissions@rustcollege.edu</p>
+    </h3>
+    <p class = "footerText">Beta</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

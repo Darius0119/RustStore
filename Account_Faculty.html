@@ -1,0 +1,111 @@
+<!--
+comments
+HeaderBarColor:#0071dc
+background-color#e6f1fc
+-->
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title>Rust Discount Department Store</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href ="Icons_Font-6/css/all.css">
+</head>
+
+<!---------Header---------->
+<body class = "Account__body">
+  <nav class="navbar">
+    <div class ="navbar__container"> 
+		<a href="/index.html" id = "navbar__logo">Account Faculty<img src = "images/BearCat_logo.images.png"></a>
+		  <div class = "navbar__toggle" id = "mobile-menu">
+            <span class ="bar"></span><span class ="bar"></span>
+            <span class ="bar"></span>
+          </div>
+		  <ul class = "navbar__menu">
+		    <li class = "navbar__item">
+				<a href = "/Departments.html" class = "navbar__links">Departments</a>
+			</li>
+			<li class = "navbar__item">
+				<a href = "/Services.html" class = "navbar__links">Services</a>
+			</li>
+			<li class = "navbar__item">
+				<a href = "/MyItems.html" class = "navbar__links">My Items</a>
+			</li>
+			<li class = "navbar__btn">
+				<a href = "/index.html" class = "button">Home</a>	
+			</li>
+		  </ul>
+    </div>
+  </nav>
+
+  <!---------Home--------->
+
+
+  <div class = "Account__home">
+    <h4 class = "Account__decor">
+        <i class="fa-solid fa-paw fa-bounce" style="color: #5291ff;"></i>
+        <i class="fa-solid fa-paw fa-bounce" style="color: #044ac4;"></i>
+        <i class="fa-solid fa-paw fa-bounce" style="color: #5291ff;"></i>
+      </h4>
+    <div class  = "Student__container">
+        <h1>
+        Student Schedule for the Week of:
+        </h1>
+        <label for = "week-selector">Select Week:</label>
+        <input type = "week" id = "week-selector" name = "week-selector">
+        <table class = "Account__table">
+            <tr>
+              <th class = "Schedule__h">Time</th>
+              <th class = "Schedule__h">Monday</th>
+              <th class = "Schedule__h">Tuesday</th>
+              <th class = "Schedule__h">Wednesday</th>
+              <th class = "Schedule__h">Thursday</th>
+              <th class = "Schedule__h">Friday</th>
+            </tr>
+            <tr>
+              <td class = "Schedule__data">10:30am-5:30pm</td>
+              <td class = "Schedule__data" id="mon-9"></td>
+              <td class = "Schedule__data" id="tue-9"></td>
+              <td class = "Schedule__data" id="wed-9"></td>
+              <td class = "Schedule__data" id="thu-9"></td>
+              <td class = "Schedule__data" id="fri-9"></td>
+            </tr>
+            <!-- Repeat the above row for each hour of the day -->
+        </table>
+    </div>
+  </div>
+
+  <!----------Footer------------------>
+  <footer class = "homeFooter">
+    <img src = "/images/IMG_0809.PNG" id = "footer__image">
+    <h1>
+    <p class = "fa-solid fa-phone" style = "color:darkgray;">  662-252-8000</p>
+    </h1>
+    <h2>
+    <p class = "fa-solid fa-location-pin" style = "color:darkgray;">  150 Rust Ave, Holly Springs, Ms 38635</p>
+    </h2>
+    <h3>
+    <p class = "fa-solid fa-envelope" style = "color:darkgray;">  admissions@rustcollege.edu</p>
+    </h3>
+    <p class = "footerText">Beta</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Retrieve the schedule from localStorage
+    var schedule = JSON.parse(localStorage.getItem('schedule'));
+    var table = document.getElementById('schedule-table');
+    var weekSelector = document.getElementById('week-selector');
+
+    weekSelector.value = schedule['mon-9'].week;
+
+      // Loop through each cell in the table and fill it with the saved data
+      for (var key in schedule) {
+        var cell = document.getElementById(key);
+        cell.innerHTML = schedule[key].start + " - " + schedule[key].end;
+      }
+  </script>
+</body>
+</html>

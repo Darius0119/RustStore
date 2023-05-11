@@ -1,0 +1,103 @@
+<!--
+comments
+HeaderBarColor:#0071dc
+background-color#e6f1fc
+-->
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title>Rust Discount Department Store</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href ="Icons_Font-6/css/all.css">
+</head>
+
+<!---------Header---------->
+<body class = "Account__body">
+  <nav class="navbar">
+    <div class ="navbar__container"> 
+		<a href="/index.html" id = "navbar__logo">Account<img src = "images/BearCat_logo.images.png"></a>
+		  <div class = "navbar__toggle" id = "mobile-menu">
+            <span class ="bar"></span><span class ="bar"></span>
+            <span class ="bar"></span>
+          </div>
+		  <ul class = "navbar__menu">
+		    <li class = "navbar__item">
+				<a href = "/Departments.html" class = "navbar__links">Departments</a>
+			</li>
+			<li class = "navbar__item">
+				<a href = "/Services.html" class = "navbar__links">Services</a>
+			</li>
+			<li class = "navbar__item">
+				<a href = "/MyItems.html" class = "navbar__links">My Items</a>
+			</li>
+			<li class = "navbar__btn">
+				<a href = "/index.html" class = "button">Home</a>	
+			</li>
+		  </ul>
+    </div>
+  </nav>
+
+  <!---------Home--------->
+
+  <div class = "Account__home">
+    <h4 class = "Account__decor">
+      <i class="fa-solid fa-paw fa-bounce" style="color: #5291ff;"></i>
+      <i class="fa-solid fa-paw fa-bounce" style="color: #044ac4;"></i>
+      <i class="fa-solid fa-paw fa-bounce" style="color: #5291ff;"></i>
+    </h4>
+    <div class  = "Account__container">
+      <h1>Sign in</h1>
+          <form onsubmit = "signIn(event)">
+            <div class="input__group">
+              <div class="input__field">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="Email" id = "email">
+              </div>
+
+              <div class="input__field">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Password" id = "password">
+              </div>
+
+              <button type = "submit">Sign in</button>
+            </div>
+          </form>
+    </div>
+  </div>
+
+
+  <!----------Footer------------------>
+  <footer class = "homeFooter">
+    <img src = "/images/IMG_0809.PNG" id = "footer__image">
+    <h1>
+    <p class = "fa-solid fa-phone" style = "color:darkgray;">  662-252-8000</p>
+    </h1>
+    <h2>
+    <p class = "fa-solid fa-location-pin" style = "color:darkgray;">  150 Rust Ave, Holly Springs, Ms 38635</p>
+    </h2>
+    <h3>
+    <p class = "fa-solid fa-envelope" style = "color:darkgray;">  admissions@rustcollege.edu</p>
+    </h3>
+    <p class = "footerText">Beta</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    function signIn(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      if (password === 'Denstudent') {
+        window.location.href = 'Account_Student.html';
+      } else if (password === 'Denfaculty') {
+        window.location.href = 'Account_Faculty.html';
+      } else {
+        alert('Invalid password!');
+      }
+    }
+  </script>
+</body>
+</html>
